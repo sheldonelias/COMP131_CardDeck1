@@ -25,8 +25,21 @@ for suit in deck:
 '''
 
 '''
-Deal a Hand of Four Cards
+Deal a Hand of One Card
+
+hand = []
+random_suit = random.randint(0, 3)
+random_rank = random.randint(0, 12)
+print('random_suit: ', random_suit, 'random_rank: ',
+  random_rank)
+print(deck[random_suit][random_rank])
+hand.append(deck[random_suit][random_rank])
+deck[random_suit].remove(deck[random_suit][random_rank])
 '''
+
+'''
+Deal a Hand of Four Cards
+
 # Creates empty hand
 hand = []
 # Starts with no loops counted
@@ -63,7 +76,33 @@ while( count < len(deck) ):
 
     # Increments count
     count += 1
+    
+print(hand)
 
 print(str(deck[0]) + '\n' + str(deck[1]) + '\n' + str(deck[2]) + '\n' + str(deck[3]) )
 
-print(hand)
+'''
+
+
+'''
+Flatten a 2d List into a 1d List Using a Card Deck Model
+'''
+
+deck_flat = [i for suit in deck for i in suit]
+
+random.shuffle(deck)
+print('2d deck shuffled does not work.')
+print(deck)
+deck.sort()
+print('2d deck sorted forward does not work.')
+print(deck_flat)
+random.shuffle(deck_flat)
+print('Flattened deck shuffled.')
+print(deck_flat)
+deck_flat.sort()
+print('Flattened deck sorted forward.')
+print(deck_flat)
+deck_flat.sort(reverse=True)
+print('Flattened deck sorted reverse.')
+print(deck_flat)
+
