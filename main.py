@@ -1,3 +1,13 @@
+'''
+PROJECT: CardDeck1
+COURSE: COMP131:Fundamentals of Computer Science
+PURPOSE: Demonstrates use of nested for loop for string representation of standard
+card deck.
+FEATURES: Includes search, random dealing of hand of four cards, flattending of a
+2d list into a 1d list.
+REQUIREMENTS: User must uncomment each of the features to make the different programs work.
+'''
+
 import random
 
 # 4 lists of strings initialized
@@ -13,7 +23,7 @@ deck = master_deck.copy()
 print(str(deck[0]) + '\n' + str(deck[1]) + '\n' + str(deck[2]) + '\n' + str(deck[3]) )
 
 '''
-Desired Card
+Find Desired Card
 
 desired_card = input()
 
@@ -86,13 +96,14 @@ print(str(deck[0]) + '\n' + str(deck[1]) + '\n' + str(deck[2]) + '\n' + str(deck
 
 '''
 Flatten a 2d List into a 1d List Using a Card Deck Model
-'''
+
 
 deck_flat = [i for suit in deck for i in suit]
-
+# Shuffles deck into random order
 random.shuffle(deck)
 print('2d deck shuffled does not work.')
 print(deck)
+# Sorts deck into alpha-numeric order with zero leading alpha-numeric order
 deck.sort()
 print('2d deck sorted forward does not work.')
 print(deck_flat)
@@ -102,7 +113,9 @@ print(deck_flat)
 deck_flat.sort()
 print('Flattened deck sorted forward.')
 print(deck_flat)
+# Sorts deck into reverse order with Z leading the alpha-numeric order
 deck_flat.sort(reverse=True)
 print('Flattened deck sorted reverse.')
 print(deck_flat)
+'''
 
